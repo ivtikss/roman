@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.DS_Store
+artifacts/
+/index.html
+/styles.css
+/script.js
+/AGENTS.md
+/CLAUDE.md

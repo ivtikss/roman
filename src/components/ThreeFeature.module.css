@@ -1,0 +1,211 @@
+.section {
+  padding: 92px 0 66px;
+  background: #18252b;
+  color: var(--white);
+}
+
+.inner {
+  width: min(calc(100% - var(--gutter) * 2), var(--content));
+  margin-inline: auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.75fr);
+  align-items: end;
+  gap: 10%;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #506066;
+}
+
+.label {
+  margin: 0 0 18px;
+  color: var(--copper-light);
+  font-size: 13px;
+  font-weight: 640;
+}
+
+.header h2 {
+  max-width: 750px;
+  margin: 0;
+  font-size: 64px;
+  font-weight: 630;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.header > p {
+  max-width: 470px;
+  margin: 0;
+  color: #c1cece;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.stage {
+  width: 100%;
+  height: clamp(430px, 47vw, 660px);
+  overflow: hidden;
+  background: #18252b;
+}
+
+.stage canvas {
+  display: block;
+}
+
+.loading {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: #c1cece;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 22px;
+  border-top: 1px solid #506066;
+}
+
+.segmented {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 4px;
+  border: 1px solid #718287;
+}
+
+.segmented button {
+  min-width: 130px;
+  min-height: 43px;
+  padding: 8px 16px;
+  border: 0;
+  background: transparent;
+  color: #c1cece;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.segmented button:hover {
+  color: var(--white);
+}
+
+.segmented .selected {
+  background: var(--copper-light);
+  color: var(--ink);
+  font-weight: 640;
+}
+
+.segmented .selected:hover {
+  color: var(--ink);
+}
+
+.controls > p {
+  max-width: 510px;
+  min-height: 45px;
+  margin: 0;
+  color: #c1cece;
+  font-size: 14px;
+}
+
+.motionButton {
+  display: grid;
+  flex: 0 0 44px;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #718287;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.motionButton:hover {
+  border-color: var(--copper-light);
+  background: #35484e;
+}
+
+@media (max-width: 900px) {
+  .header h2 {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding: 68px 0 52px;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+
+  .label {
+    margin-bottom: 11px;
+  }
+
+  .header h2 {
+    font-size: 38px;
+  }
+
+  .header > p {
+    font-size: 15px;
+  }
+
+  .stage {
+    height: 420px;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+    gap: 18px;
+  }
+
+  .segmented {
+    grid-column: 1;
+  }
+
+  .segmented button {
+    min-width: 120px;
+  }
+
+  .controls > p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .motionButton {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+}
+
+@media (max-width: 360px) {
+  .header h2 {
+    font-size: 34px;
+  }
+
+  .stage {
+    height: 360px;
+  }
+
+  .segmented {
+    width: 100%;
+  }
+
+  .segmented button {
+    flex: 1;
+    min-width: 0;
+  }
+}
